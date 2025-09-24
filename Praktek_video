@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Poto Bersama Pak Trimans & Pak Odih</h1>
+        <video autoplay loop muted playsinline>
+            <source src="c:\Users\rulaa nur naflah\Downloads\WhatsApp Video 2025-09-24 at 08.08.27_786d3df6.webm" type="video/webm" />
+            <source src="c:\Users\rulaa nur naflah\Downloads\WhatsApp Video 2025-09-24 at 08.08.27_786d3df6.mp4" type="video/mp4" />
+        </video>
+    </body>
+    </html>
