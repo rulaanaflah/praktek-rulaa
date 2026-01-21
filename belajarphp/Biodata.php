@@ -2,7 +2,7 @@
     $Nama = "Rulaa Nur Naflah";
     $Kelas = "XI TJKT 1";
     $Jurusan = "Teknik Jaringan Komputer Telekomunikasi";
-    $Alamat = "Kp. Parung Halang Rt/Rw 05/01 No.09 Kel.Andir Kec.Baleendah Kab.Bandung"
+    $Alamat = "Kp. Parung Halang Rt/Rw 05/01 No.09 Kel.Andir Kec.Baleendah Kab.Bandung";
     $Hobi = "Main Basket";
 ?>
 <!DOCTYPE html>
