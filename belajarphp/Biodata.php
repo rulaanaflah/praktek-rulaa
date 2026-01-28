@@ -13,11 +13,11 @@
 <body>
 
 <h2>Biodata Siswa</h2>
-Nama : <?php echo  $Nama = "Rulaa Nur Naflah"; ?><Br>
-Kelas : <?php echo  $Kelas = "XI TJKT 1"; ?><Br>
-Jurusan : <?php echo $Jurusan = "Teknik Jaringan Komputer Telekomunikasi"; ?><Br>
-Alamat : <?php echo  $Alamat = "Kp. Parung Halang Rt/Rw 05/01 No.09 Kel.Andir Kec.Baleendah Kab.Bandung"; ?><Br>
-Hobi : <?php echo $Hobi = "Main Basket"; ?><Br>
+Nama : <?php echo  $Nama; ?><Br>
+Kelas : <?php echo  $Kelas; ?><Br>
+Jurusan : <?php echo $Jurusan; ?><Br>
+Alamat : <?php echo  $Alamat; ?><Br>
+Hobi : <?php echo $Hobi; ?><Br>
 
 </body>
 </html>
