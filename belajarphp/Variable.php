@@ -2,7 +2,7 @@
     $Jenis_Kelamin = 'P';
     $Nama_Lengkap = "Rulaa Nur Naflah";
     $Umur = 16;
-    $Berat = 48.5
+    $Berat = 48.5;
     $Tinggi = 156.1;
     
     echo "Nama: $Nama_Lengkap<Br>";
