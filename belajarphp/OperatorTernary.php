@@ -1,5 +1,5 @@
 <?php
-$kamu suka aku?
+
 $suka = true;
 
 // menggunakan operator ternary
