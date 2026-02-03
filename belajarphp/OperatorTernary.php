@@ -6,5 +6,4 @@ $suka = true;
 $jawab = $suka ? "iya": "tidak";
 
 // menampilkan jawaban
-echo $kamu;
 echo $jawab;
