@@ -72,4 +72,18 @@ if($total_belanja > 100000){
 
     echo $suka ? "<p>Aku juga suka kamu</p>": "Baiklah!";
     }
+
+// Percabangan Bersarang
+     $umur = 17;
+    $menikah = false;
+
+    if($umur > 18){
+        if($menikah){
+            echo "<p>Selamat datang pak!</p>";
+        } else {
+            echo "<p>Selamat datang wahai pemuda!</p>";
+        }
+    } else {
+        echo "<p>Maaf website ini hanya untuk yang sudah berumur 18+</p>";
+    }   
 ?>
