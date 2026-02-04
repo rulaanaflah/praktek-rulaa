@@ -51,7 +51,7 @@ if($total_belanja > 100000){
 // Percabangan Switch/Case
     $level = 3;
 
-switch($level){
+    switch($level){
     case 1:
         echo "<p>Pelajari HTML</p>";
         break;
@@ -66,5 +66,10 @@ switch($level){
         break;
     default:
         echo "<p>Kamu bukan programmer!</p>";
-}
+    }
+//  Percabangan dengan Operator Ternary
+        $suka = true;{
+
+    echo $suka ? "<p>Aku juga suka kamu</p>": "Baiklah!";
+    }
 ?>
