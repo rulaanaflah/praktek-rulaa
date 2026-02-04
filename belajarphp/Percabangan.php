@@ -53,18 +53,18 @@ if($total_belanja > 100000){
 
 switch($level){
     case 1:
-        echo "Pelajari HTML";
+        echo "<p>Pelajari HTML</p>";
         break;
     case 2:
-        echo "Pelajari CSS";
+        echo "<p>Pelajari CSS</p>";
         break;
     case 3:
-        echo "Pelajari Javascript";
+        echo "<p>Pelajari Javascript</p>";
         break;
     case 4:
-        echo "Pelajari PHP";
+        echo "<p>Pelajari PHP</p>";
         break;
     default:
-        echo "Kamu bukan programmer!";
+        echo "<p>Kamu bukan programmer!</p>";
 }
 ?>
