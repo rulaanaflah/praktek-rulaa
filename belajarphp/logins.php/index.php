@@ -9,7 +9,7 @@
         <legend>Login</legend>
         <p>
             <label>Username:</label>
-            <input type="text" name="username" placeholder="username..." />
+            <input type="text" name="username" placeholder="username..." required/>
         </p>
         <p>
             <label>Password:</label>
