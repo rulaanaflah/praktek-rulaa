@@ -6,7 +6,7 @@ if (isset($_SESSION['username'])) {
     exit();
 } else if (isset($_POST['submit'])) {
     $username_benar ="Runna";
-    $password_benar = hash('sha256', "173703*");
+    $password_benar = hash('sha256', "173703");
     $username = $_POST['username'];
     $password = hash('sha256', $_POST['password']); // Hash the input password using SHA-256
     if (($username == $username_benar) && ($password == $password_benar)) {
