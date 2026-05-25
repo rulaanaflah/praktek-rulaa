@@ -110,7 +110,7 @@ while($row = mysqli_fetch_array($data)){
 
     <td><?= $row['nama']; ?></td>
 
-    <td><?= $row['mata_pelajaran']; ?></td>
+    <td><?= $row['mapel']; ?></td>
 
     <td>
 
