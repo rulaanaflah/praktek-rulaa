@@ -95,6 +95,7 @@ color:white;
 $no = 1;
 
 while($row = mysqli_fetch_assoc($data)){
+    echo $row['nama']
 ?>
 
 <tr>

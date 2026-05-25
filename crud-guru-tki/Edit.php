@@ -93,19 +93,19 @@ Update Data
 
 </button>
 
-<a
-href="index.php"
-class="btn btn-secondary">
+    <a
+        href="index.php"
+        class="btn btn-secondary">
 
-Kembali
+        Kembali
 
-</a>
+    </a>
 
-</form>
+        </form>
 
-</div>
+    </div>
 
-</div>
+    </div>
 
-</body>
+    </body>
 </html>
