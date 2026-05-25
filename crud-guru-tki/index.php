@@ -1,115 +1,146 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['login'])){
+    header("location:login.php");
+    exit;
+}
+
+include 'koneksi.php';
+
+$data = mysqli_query($conn, "SELECT * FROM guru_tki");
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login Admin</title>
+    <title>Biodata Guru TKI</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
-        
-        body {
-            background: linear-gradient(135deg, #6a11cb, #2575fc);
-            height: 100vh;
-            font-family: Arial, sans-serif;
-        }
-
-/* efek lingkaran kayak molekul */
-        body::before {
-            content: "";
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            top: 10%;
-            left: 10%;
-        }
-
-        body::after {
-            content: "";
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            bottom: 10%;
-            right: 10%;
-        }
-
-/* card login */
-        .card {
-            border-radius: 15px;
-            backdrop-filter: blur(10px);
-            background: rgba(255,255,255,0.9);
-        }
-
-/* tombol login */
-        .btn-primary {
-            background: linear-gradient(45deg, #00c6ff, #0072ff);
-            border: none;
-        }
-</style>
-
 </head>
-<body>
+<body style="background-color:#F3F0FF;">
+    <nav class="navbar navbar-expand-lg navbar-dark"
+style="background-color:#8C00FF;">
+
+<div class="container">
+
+    <a class="navbar-brand fw-bold" href="#">
+
+        🧪 TEKNIK KIMIA INDUSTRI
+
+    </a>
+
+    <a href="logout.php"
+    class="btn btn-light">
+
+        Logout
+
+    </a>
+
+</div>
+
+</nav>
 
 <div class="container mt-5">
 
-    <div class="row justify-content-center">
+    <h2 class="text-center fw-bold"
+    style="color:#8C00FF;">
+        BIODATA GURU TEKNIK KIMIA INDUSTRI
+    </h2>
 
-        <div class="col-md-4">
+    <h4 class="text-center mb-4">
+        SMKN 2 BALEENDAH
+    </h4>
 
-            <div class="card p-4 shadow">
+    <p class="text-center"
+    style="color:#8C00FF;">
 
-            <div class="text-center mb-3">
-                    <img src="assets/logo-smk2.jpeg" alt="Logo Sekolah" width="80">
-                </div>
+        🧪 Sistem Biodata Guru
+        Teknik Kimia Industri 🧪
+    </p>
 
-                <h3 class="text-center mb-4">
-                    LOGIN ADMIN
-                </h3>
+    <a href="tambah.php"
+    class="btn text-white mb-3"
+    style="background-color:#8C00FF;">
+        + Tambah Data
+    </a>
 
-                <form action="proses_login.php" method="POST">
+   <div class="card shadow-lg p-4 border-0 rounded-4">
 
-                    <div class="mb-3">
+<table class="table text-center align-middle shadow-lg rounded-4 overflow-hidden"
+style="
+background-color:#F8F2FC;
+border-radius:20px;
+overflow:hidden;
+">
 
-                        <label>Username</label>
+    <tr
+    style="
+    background: linear-gradient(90deg,#D8B4E2,#8E7AB5);
+    color:white;
+    font-size:18px;
+    letter-spacing:1px;
+    ">
 
-                        <input
-                        type="text"
-                        name="username"
-                        class="form-control"
-                        required>
+        <th style="padding:15px;">🧪 No</th>
+        <th>📸 Foto</th>
+        <th>👩‍🏫 Nama</th>
+        <th>📚 Mata Pelajaran</th>
+        <th>⚙️ Aksi</th>
 
-                    </div>
+    </tr>
 
-                    <div class="mb-3">
+<?php
 
-                        <label>Password</label>
+$no = 1;
 
-                        <input
-                        type="password"
-                        name="password"
-                        class="form-control"
-                        required>
+while($row = mysqli_fetch_array($data)){
 
-                    </div>
+?>
 
-                    <button
-                    type="submit"
-                    class="btn btn-primary w-100">
+<tr style="background-color:#FDFBFF;">
 
-                        Login
+    <td><?= $no++; ?></td>
 
-                    </button>
+    <td>
 
-                </form>
+        <img
+        src="uploads/<?= $row['foto']; ?>"
+        width="80"
+        class="rounded-circle shadow">
 
-            </div>
+    </td>
 
-        </div>
+    <td><?= $row['nama']; ?></td>
 
-    </div>
+    <td><?= $row['mapel']; ?></td>
+
+    <td>
+
+        <a
+        href="edit.php?id=<?= $row['id']; ?>"
+        class="btn btn-warning btn-sm">
+
+        Edit
+
+        </a>
+
+        <a
+        href="hapus.php?id=<?= $row['id']; ?>"
+        class="btn btn-danger btn-sm">
+
+        Hapus
+
+        </a>
+
+    </td>
+
+</tr>
+
+<?php } ?>
+
+</table>
 
 </div>
 

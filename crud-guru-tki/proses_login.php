@@ -19,7 +19,7 @@ if($cek > 0){
 
     $_SESSION['login'] = true;
 
-    header("Location:dashboard.php");
+    header("Location:index.php");
 
 }else{
 
