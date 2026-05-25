@@ -28,7 +28,7 @@ if($cek > 0){
 
     alert('Username atau Password Salah');
 
-    window.location='login.php';
+    window.location='index.php';
 
     </script>
     ";
