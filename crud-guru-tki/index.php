@@ -69,7 +69,7 @@ style="background-color:#8C00FF;">
 
 <div class="card shadow-lg p-4 border-0 rounded-4">
 
-<table class="table text-center align-middle">
+<table class="table table-bordered text-center align-middle">
 
 <thead
 style="
@@ -95,7 +95,6 @@ color:white;
 $no = 1;
 
 while($row = mysqli_fetch_assoc($data)){
-    echo $row['nama']
 ?>
 
 <tr>
