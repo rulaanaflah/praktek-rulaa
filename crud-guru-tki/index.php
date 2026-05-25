@@ -8,7 +8,12 @@ if(!isset($_SESSION['login'])){
 
 include 'koneksi.php';
 
-$data = mysqli_query($conn, "SELECT * FROM guru_tki");
+$sql = "SELECT * FROM guru_tki";
+$data = mysqli_query($conn, $sql);
+
+if(!$data){
+    die("Query Error : " . mysqli_error($conn));
+}
 ?>
 
 <!DOCTYPE html>
@@ -72,26 +77,24 @@ background: linear-gradient(90deg,#D8B4E2,#8E7AB5);
 color:white;
 ">
 
-    <tr>
+<tr>
 
-        <th>🧪 No</th>
-        <th>📸 Foto</th>
-        <th>👩‍🏫 Nama</th>
-        <th>📚 Mata Pelajaran</th>
-        <th>⚙️ Aksi</th>
+    <th>🧪 No</th>
+    <th>📸 Foto</th>
+    <th>👩‍🏫 Nama</th>
+    <th>📚 Mata Pelajaran</th>
+    <th>⚙️ Aksi</th>
 
-    </tr>
+</tr>
 
 </thead>
 
 <tbody>
 
 <?php
-
 $no = 1;
 
-while($row = mysqli_fetch_array($data)){
-
+while($row = mysqli_fetch_assoc($data)){
 ?>
 
 <tr>
@@ -104,7 +107,7 @@ while($row = mysqli_fetch_array($data)){
         src="uploads/<?= $row['foto']; ?>"
         width="80"
         height="80"
-        style="object-fit:cover; border-radius:50%;">
+        style="border-radius:50%; object-fit:cover;">
 
     </td>
 
