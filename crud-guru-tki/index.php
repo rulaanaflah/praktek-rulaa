@@ -37,7 +37,9 @@ style="background-color:#8C00FF;">
     </a>
 
     <a href="logout.php"
-    class="btn btn-light">
+    class="btn btn-light"
+    onclick="return confirm('Yakin ingin logout?')"
+    >
         Logout
     </a>
 
@@ -79,11 +81,11 @@ color:white;
 
 <tr>
 
-    <th>🧪 No</th>
-    <th>📸 Foto</th>
-    <th>👩‍🏫 Nama</th>
-    <th>📚 Mata Pelajaran</th>
-    <th>⚙️ Aksi</th>
+    <th>No</th>
+    <th>Foto</th>
+    <th>Nama</th>
+    <th>Mata Pelajaran</th>
+    <th>Aksi</th>
 
 </tr>
 
@@ -103,11 +105,16 @@ while($row = mysqli_fetch_assoc($data)){
 
     <td>
 
-        <img
+        <a href="detail.php?id=<?= $row['id']; ?>">
+
+    <img
         src="uploads/<?= $row['foto']; ?>"
-        width="80"
-        height="80"
-        style="border-radius:50%; object-fit:cover;">
+        width="100"
+        class="rounded-circle shadow"
+        style="object-fit:cover; height:100px; "
+    >
+
+</a>
 
     </td>
 
