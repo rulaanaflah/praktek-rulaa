@@ -19,23 +19,21 @@ $data = mysqli_query($conn, "SELECT * FROM guru_tki");
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
+
 <body style="background-color:#F3F0FF;">
-    <nav class="navbar navbar-expand-lg navbar-dark"
+
+<nav class="navbar navbar-expand-lg navbar-dark"
 style="background-color:#8C00FF;">
 
 <div class="container">
 
     <a class="navbar-brand fw-bold" href="#">
-
         🧪 TEKNIK KIMIA INDUSTRI
-
     </a>
 
     <a href="logout.php"
     class="btn btn-light">
-
         Logout
-
     </a>
 
 </div>
@@ -55,9 +53,7 @@ style="background-color:#8C00FF;">
 
     <p class="text-center"
     style="color:#8C00FF;">
-
-        🧪 Sistem Biodata Guru
-        Teknik Kimia Industri 🧪
+        🧪 Sistem Biodata Guru Teknik Kimia Industri 🧪
     </p>
 
     <a href="tambah.php"
@@ -66,30 +62,29 @@ style="background-color:#8C00FF;">
         + Tambah Data
     </a>
 
-   <div class="card shadow-lg p-4 border-0 rounded-4">
+<div class="card shadow-lg p-4 border-0 rounded-4">
 
-<table class="table text-center align-middle shadow-lg rounded-4 overflow-hidden"
+<table class="table text-center align-middle">
+
+<thead
 style="
-background-color:#F8F2FC;
-border-radius:20px;
-overflow:hidden;
+background: linear-gradient(90deg,#D8B4E2,#8E7AB5);
+color:white;
 ">
 
-    <tr
-    style="
-    background: linear-gradient(90deg,#D8B4E2,#8E7AB5);
-    color:white;
-    font-size:18px;
-    letter-spacing:1px;
-    ">
+    <tr>
 
-        <th style="padding:15px;">🧪 No</th>
+        <th>🧪 No</th>
         <th>📸 Foto</th>
         <th>👩‍🏫 Nama</th>
         <th>📚 Mata Pelajaran</th>
         <th>⚙️ Aksi</th>
 
     </tr>
+
+</thead>
+
+<tbody>
 
 <?php
 
@@ -99,7 +94,7 @@ while($row = mysqli_fetch_array($data)){
 
 ?>
 
-<tr style="background-color:#FDFBFF;">
+<tr>
 
     <td><?= $no++; ?></td>
 
@@ -108,13 +103,14 @@ while($row = mysqli_fetch_array($data)){
         <img
         src="uploads/<?= $row['foto']; ?>"
         width="80"
-        class="rounded-circle shadow">
+        height="80"
+        style="object-fit:cover; border-radius:50%;">
 
     </td>
 
     <td><?= $row['nama']; ?></td>
 
-    <td><?= $row['mapel']; ?></td>
+    <td><?= $row['mata_pelajaran']; ?></td>
 
     <td>
 
@@ -122,15 +118,16 @@ while($row = mysqli_fetch_array($data)){
         href="edit.php?id=<?= $row['id']; ?>"
         class="btn btn-warning btn-sm">
 
-        Edit
+            Edit
 
         </a>
 
         <a
         href="hapus.php?id=<?= $row['id']; ?>"
-        class="btn btn-danger btn-sm">
+        class="btn btn-danger btn-sm"
+        onclick="return confirm('Yakin ingin hapus data?')">
 
-        Hapus
+            Hapus
 
         </a>
 
@@ -140,7 +137,11 @@ while($row = mysqli_fetch_array($data)){
 
 <?php } ?>
 
+</tbody>
+
 </table>
+
+</div>
 
 </div>
 
